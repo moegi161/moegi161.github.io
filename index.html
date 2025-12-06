@@ -2,25 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Chan Weng Ian (Ianna) – Research</title>
+  <title>Weng Ian Chan – Research</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Personal website of Chan Weng Ian (Ianna), PhD student at Osaka University working on computer vision and generative models."
+    content="Personal website of Weng Ian (Ianna) Chan, doctoral student at Osaka University working on computer vision and generative models."
   />
   <style>
     :root {
-      --bg: #f7f7fa;
+      /* Color palette based on your suggestion */
+      --accent: #617b47;        /* deep green */
+      --accent-bright: #8dba30; /* bright green */
+      --accent-soft: rgba(141, 186, 48, 0.12);
+      --highlight-yellow: #f6b827;
+      --highlight-yellow-soft: rgba(246, 184, 39, 0.12);
+      --highlight-orange: #f87d08;
+      --bg: #fdfdf8;           /* soft warm white */
       --bg-alt: #ffffff;
-      --accent: #2b5cff;
-      --accent-soft: rgba(43, 92, 255, 0.08);
-      --text: #111111;
-      --text-soft: #555555;
-      --border: #e0e0ee;
-      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.12);
-      --radius-lg: 18px;
-      --radius-xl: 26px;
+      --bg-muted: #f5f6eb;
+      --border: #dde1cf;
+      --text: #141414;
+      --text-soft: #54585a;
       --max-width: 960px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.12);
     }
 
     * {
@@ -32,7 +38,8 @@
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
-      background: radial-gradient(circle at top left, #eef2ff 0, #f9fafb 50%, #f8fafc 100%);
+      background:
+        radial-gradient(circle at top left, #f6fbe8 0, #fdfdf8 48%, #faf9f3 100%);
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -47,26 +54,25 @@
       text-decoration: underline;
     }
 
-    /* Layout */
-
     .page {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 24px 18px 80px;
     }
 
+    /* Navigation */
     header {
       position: sticky;
       top: 0;
       z-index: 10;
       backdrop-filter: blur(16px);
       background: linear-gradient(
-          to bottom,
-          rgba(248, 250, 252, 0.9),
-          rgba(248, 250, 252, 0.75),
-          transparent
-        );
-      border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+        to bottom,
+        rgba(250, 250, 244, 0.96),
+        rgba(250, 250, 244, 0.86),
+        transparent
+      );
+      border-bottom: 1px solid rgba(221, 225, 207, 0.8);
     }
 
     .nav-inner {
@@ -80,10 +86,11 @@
     }
 
     .nav-brand {
-      font-weight: 650;
+      font-weight: 640;
       font-size: 1rem;
-      letter-spacing: 0.03em;
-      color: #111827;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #18181b;
       white-space: nowrap;
     }
 
@@ -121,18 +128,15 @@
       align-items: center;
       justify-content: center;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
+      border: 1px solid rgba(111, 118, 96, 0.6);
       padding: 7px 14px;
       font-size: 0.85rem;
       font-weight: 500;
       background: #ffffff;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
       gap: 6px;
       white-space: nowrap;
-    }
-
-    .btn span:nth-child(2) {
-      font-size: 0.95em;
+      color: var(--text);
     }
 
     .btn:hover {
@@ -149,11 +153,11 @@
     }
 
     .section-title {
-      font-size: 1.1rem;
-      font-weight: 650;
-      letter-spacing: 0.03em;
+      font-size: 1.05rem;
+      font-weight: 640;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--text-soft);
+      color: #6b7280;
       margin-bottom: 14px;
     }
 
@@ -161,7 +165,7 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
       gap: 24px;
       align-items: stretch;
       margin-bottom: 32px;
@@ -170,27 +174,27 @@
     .hero-main {
       background: var(--bg-alt);
       border-radius: var(--radius-xl);
-      padding: 24px 24px 22px;
+      padding: 22px 24px 20px;
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(226, 232, 240, 0.85);
+      border: 1px solid rgba(221, 225, 207, 0.9);
     }
 
     .hero-name {
-      font-size: clamp(1.7rem, 4vw, 2.1rem);
-      font-weight: 750;
+      font-size: clamp(1.8rem, 4vw, 2.2rem);
+      font-weight: 720;
       letter-spacing: 0.02em;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .hero-subname {
       font-size: 0.95rem;
       color: var(--text-soft);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .hero-role {
       font-size: 0.95rem;
-      font-weight: 500;
+      font-weight: 520;
       color: var(--accent);
       padding: 6px 10px;
       border-radius: 999px;
@@ -202,7 +206,7 @@
     .hero-text {
       font-size: 0.95rem;
       color: var(--text-soft);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .hero-tags {
@@ -216,9 +220,9 @@
       font-size: 0.78rem;
       padding: 4px 9px;
       border-radius: 999px;
-      background: #f3f4ff;
-      color: #1e293b;
-      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: var(--bg-muted);
+      color: #1f2933;
+      border: 1px solid rgba(192, 197, 169, 0.9);
     }
 
     .hero-links {
@@ -226,7 +230,8 @@
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 8px;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
+      color: var(--text-soft);
     }
 
     .hero-links a {
@@ -236,23 +241,23 @@
     }
 
     .hero-meta {
-      background: rgba(15, 23, 42, 0.9);
+      background: #21231c;
       color: #e5e7eb;
       border-radius: var(--radius-xl);
       padding: 18px 18px 16px;
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(30, 64, 175, 0.6);
+      border: 1px solid rgba(97, 123, 71, 0.9);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
     .hero-meta-title {
-      font-size: 0.88rem;
-      letter-spacing: 0.14em;
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #9ca3af;
-      margin-bottom: 6px;
+      color: #a3a3a3;
+      margin-bottom: 4px;
     }
 
     .hero-meta-main {
@@ -267,22 +272,22 @@
 
     .hero-meta-list {
       list-style: none;
-      font-size: 0.82rem;
-      color: #9ca3af;
-      margin-bottom: 8px;
+      font-size: 0.83rem;
+      color: #d4d4d4;
+      margin-bottom: 6px;
     }
 
     .hero-meta-list li {
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
 
     .hero-meta-foot {
       font-size: 0.8rem;
-      color: #9ca3af;
-      margin-top: 6px;
+      color: #b0b4a2;
+      margin-top: 4px;
     }
 
-    /* Two column sections */
+    /* Layout helpers */
 
     .two-col {
       display: grid;
@@ -296,7 +301,7 @@
       border-radius: var(--radius-lg);
       padding: 16px 18px 14px;
       border: 1px solid var(--border);
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
     }
 
     .card + .card {
@@ -307,6 +312,7 @@
       font-size: 0.95rem;
       font-weight: 620;
       margin-bottom: 6px;
+      color: #111827;
     }
 
     .card-subtitle {
@@ -341,22 +347,22 @@
       color: #111827;
     }
 
-    /* List sections */
+    /* Publications */
 
     .item {
       padding: 10px 12px;
-      border-radius: 12px;
+      border-radius: 14px;
       transition: background 0.15s ease-out, transform 0.15s ease-out;
     }
 
     .item:hover {
-      background: #f3f4ff;
+      background: #f4f7e6;
       transform: translateY(-1px);
     }
 
     .item-title {
-      font-size: 0.94rem;
-      font-weight: 600;
+      font-size: 0.96rem;
+      font-weight: 620;
     }
 
     .item-authors {
@@ -366,7 +372,7 @@
     }
 
     .item-venue {
-      font-size: 0.86rem;
+      font-size: 0.87rem;
       color: var(--text-soft);
       margin-top: 2px;
     }
@@ -375,9 +381,9 @@
       display: inline-flex;
       align-items: center;
       border-radius: 999px;
-      background: #ecfdf5;
-      color: #166534;
-      border: 1px solid #bbf7d0;
+      background: var(--highlight-yellow-soft);
+      color: #8b5b10;
+      border: 1px solid #facc15;
       font-size: 0.75rem;
       padding: 2px 8px;
       margin-left: 6px;
@@ -389,6 +395,12 @@
       margin-top: 3px;
     }
 
+    .full-list-note {
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      margin-top: 8px;
+    }
+
     /* Contact */
 
     .contact-grid {
@@ -397,15 +409,11 @@
       gap: 20px;
     }
 
-    .contact-label {
-      font-size: 0.9rem;
-      color: var(--text-soft);
-    }
-
     .contact-value {
       font-size: 0.92rem;
       margin-top: 3px;
       word-break: break-all;
+      color: var(--text-soft);
     }
 
     footer {
@@ -451,7 +459,7 @@
 <body>
   <header>
     <div class="nav-inner">
-      <div class="nav-brand">CHAN WENG IAN</div>
+      <div class="nav-brand">WENG IAN CHAN</div>
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#publications">Publications</a>
@@ -459,7 +467,7 @@
         <a href="#awards">Awards</a>
         <a href="#contact">Contact</a>
         <!-- TODO: replace cv.pdf with your actual file name -->
-        <a href="cv.pdf" class="btn"><span>Download CV</span><span>↗</span></a>
+        <a href="cv.pdf" class="btn"><span>CV</span><span>↗</span></a>
       </nav>
     </div>
   </header>
@@ -469,15 +477,15 @@
       <!-- Hero -->
       <section class="hero" id="top">
         <div class="hero-main">
-          <div class="hero-name">Chan Weng Ian</div>
+          <div class="hero-name">Weng Ian Chan</div>
           <div class="hero-subname">Ianna</div>
           <div class="hero-role">
-            PhD Student, Computer Vision Lab, Osaka University
+            Doctoral Student, Computer Vision Lab, Osaka University
           </div>
           <p class="hero-text">
-            I am a PhD student in the Computer Vision Laboratory at Osaka University, Japan.
-            My research focuses on computer vision and generative models, especially
-            controllable image and video synthesis.
+            I am a doctoral student in the Computer Vision Laboratory at Osaka University, Japan.
+            My research focuses on computer vision and generative models, with a particular interest
+            in controllable image and video synthesis, diffusion models, and fair generative systems.
           </p>
           <div class="hero-tags">
             <span class="hero-tag">Generative models</span>
@@ -486,15 +494,16 @@
             <span class="hero-tag">Fair & robust generation</span>
           </div>
           <div class="hero-links">
-            <!-- TODO: update links as needed -->
-            <a href="mailto:chan.wengian@ist.osaka-u.ac.jp">Email</a>
+            <a href="mailto:ian1204@gmail.com">Gmail</a>
             <span>·</span>
-            <a href="https://scholar.google.com/" target="_blank" rel="noopener">
-              Google Scholar
-            </a>
+            <a href="mailto:chan.wengian@ist.osaka-u.ac.jp">Osaka U email</a>
             <span>·</span>
             <a href="https://github.com/moegi161" target="_blank" rel="noopener">
               GitHub
+            </a>
+            <span>·</span>
+            <a href="https://scholar.google.com/citations?user=TcdTtjIAAAAJ" target="_blank" rel="noopener">
+              Google Scholar
             </a>
           </div>
         </div>
@@ -508,28 +517,38 @@
               Osaka University, Japan
             </div>
             <ul class="hero-meta-list">
-              <li>Supervisor: (Prof. Name, if you want)</li>
+              <li>Doctoral Student in Information Science</li>
+              <li>Expected graduation: Mar 2026</li>
               <li>Location: Osaka, Japan</li>
+            </ul>
+            <div class="hero-meta-title" style="margin-top:10px;">Languages</div>
+            <ul class="hero-meta-list">
+              <li>Cantonese (Native)</li>
+              <li>Mandarin (Fluent)</li>
+              <li>Japanese (JLPT N1+)</li>
+              <li>English (TOEIC L&amp;R 990)</li>
             </ul>
           </div>
           <div class="hero-meta-foot">
-            I am broadly interested in methods that make generative models
-            more controllable, robust, and useful for real-world applications.
+            I am broadly interested in making generative models more controllable,
+            reliable, and useful for real-world applications, from human image
+            editing to medical imaging and quantum-inspired learning.
           </div>
         </aside>
       </section>
 
-      <!-- About & Research interests -->
+      <!-- About & Skills -->
       <section id="about">
         <h2 class="section-title">About & Research Interests</h2>
         <div class="two-col">
           <div class="card">
             <div class="card-title">About me</div>
             <div class="card-body">
-              I am currently a PhD candidate in the Computer Vision Laboratory at
-              Osaka University. Before starting my PhD, I received my Master and
-              Bachelor degrees from Osaka University, supported by the Japanese
-              Government (MEXT) Scholarship.
+              I am currently a doctoral student in Multimedia Engineering at Osaka University,
+              supported by the Osaka University Fellowship for Information and AI Technologies.
+              I have over four years of experience working with advanced image synthesis techniques,
+              including diffusion models and GANs, and enjoy bridging theory, implementation, and
+              practical applications across different domains.
             </div>
           </div>
           <div class="card">
@@ -538,7 +557,45 @@
               <li>Controllable image and video synthesis</li>
               <li>Diffusion models and latent-space editing</li>
               <li>Fairness and robustness in generative models</li>
-              <li>Applications of generative models to 3D and vision</li>
+              <li>Applications to 3D vision and medical imaging</li>
+              <li>Quantum-inspired approaches to weakly supervised learning</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="two-col" style="margin-top:16px;">
+          <div class="card">
+            <div class="card-title">Skills</div>
+            <ul class="list-compact">
+              <li>
+                <strong>Programming</strong>: Python
+              </li>
+              <li>
+                <strong>Libraries</strong>: PyTorch, NumPy, Pandas, OpenCV, Accelerate, Diffusers
+              </li>
+              <li>
+                <strong>Technologies</strong>: Linux, CUDA, Docker, Git, LaTeX
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-title">Education</div>
+            <ul class="list-compact">
+              <li>
+                <strong>PhD in Information Science</strong><br />
+                Multimedia Engineering, Osaka University, Japan<br />
+                <span class="card-meta">Apr 2023 – present (expected Mar 2026)</span>
+              </li>
+              <li>
+                <strong>Master of Information Science</strong><br />
+                Multimedia Engineering, Osaka University, Japan<br />
+                <span class="card-meta">Apr 2021 – Mar 2023</span>
+              </li>
+              <li>
+                <strong>Bachelor of Engineering</strong><br />
+                Electronic and Information Engineering, Osaka University, Japan<br />
+                <span class="card-meta">Apr 2017 – Mar 2021</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -548,34 +605,54 @@
       <section id="publications">
         <h2 class="section-title">Selected Publications</h2>
 
-        <!-- Newest papers first; update these entries yourself -->
+        <!-- TODO: fill in co-authors exactly as you prefer -->
         <div class="item">
           <div class="item-title">
-            (Title of your most recent paper here)
-            <!-- Example badge -->
-            <!-- <span class="badge">To appear</span> -->
+            Instance-wise Distribution Control of Text-to-image Diffusion Models
           </div>
           <div class="item-authors">
-            <strong>Weng Ian Chan</strong>, Coauthor A, Coauthor B
+            Chan, W. I. <em>et al.</em>
           </div>
           <div class="item-venue">
-            Conference / Journal, Year.
+            Pattern Recognition, vol. 172, part C, 2026, article 112614.
           </div>
           <div class="item-meta">
-            Short one-line summary of what the paper is about.
+            Fine-tuning text-to-image diffusion models to control multi-instance distributions and
+            improve representation of underrepresented groups.
+            <!-- DOI from your CV; you can make it clickable if you like -->
+            <!-- <a href="https://doi.org/10.1016/j.patcog.2025.112614">doi:10.1016/j.patcog.2025.112614</a> -->
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-title">
+            Learning from Similarity Proportion Loss for Classifying Skeletal Muscle Recovery Stages
+          </div>
+          <div class="item-authors">
+            Chan, W. I. <em>et al.</em>
+          </div>
+          <div class="item-venue">
+            MICCAI Workshop on Advancing Data Solutions in Medical Imaging AI (ADS-MIA), 2024.
+          </div>
+          <div class="item-meta">
+            A label-proportion-based learning approach for assessing skeletal muscle recovery, combining
+            weak supervision with medical imaging.
           </div>
         </div>
 
         <div class="item">
           <div class="item-title">
             Fine-grained Facial Image Manipulation via Latent Space Decomposition
+            <span class="badge">Interactive Presentation Award</span>
           </div>
           <div class="item-authors">
-            <strong>Weng Ian Chan</strong>, Xu Cao, Hiroaki Santo, Fumio Okura
+            Chan, W. I. <em>et al.</em>
           </div>
           <div class="item-venue">
             Meeting on Image Recognition and Understanding (MIRU), 2023.
-            <span class="badge">Interactive Presentation Award</span>
+          </div>
+          <div class="item-meta">
+            Decomposing the latent space of StyleGAN to enable fine-grained control of facial expressions.
           </div>
         </div>
 
@@ -584,18 +661,45 @@
             Conditional StyleGAN with Multi-resolution Classifiers for Attribute-driven Face Synthesis
           </div>
           <div class="item-authors">
-            <strong>Weng Ian Chan</strong>, Fumio Okura, Yasuyuki Matsushita
+            Chan, W. I. <em>et al.</em>
           </div>
           <div class="item-venue">
             Meeting on Image Recognition and Understanding (MIRU), 2021.
-            <span class="badge">Oral</span>
+          </div>
+          <div class="item-meta">
+            Attribute-driven face synthesis with multi-resolution conditional classifiers for StyleGAN.
           </div>
         </div>
+
+        <div class="item">
+          <div class="item-title">
+            Quantum Learning from Label Proportion
+          </div>
+          <div class="item-authors">
+            Chan, W. I. <em>et al.</em>
+          </div>
+          <div class="item-venue">
+            Quantum Information Processing (QIP), 2026. Poster.
+          </div>
+          <div class="item-meta">
+            A quantum formulation of learning from label proportions that leverages probabilistic qubit
+            measurements for weak supervision.
+          </div>
+        </div>
+
+        <p class="full-list-note">
+          For a full list of publications, please see my
+          <a href="https://scholar.google.com/citations?user=TcdTtjIAAAAJ" target="_blank" rel="noopener">
+            Google Scholar
+          </a>
+          or
+          <a href="cv.pdf" target="_blank" rel="noopener">CV</a>.
+        </p>
       </section>
 
-      <!-- Experience & Education -->
+      <!-- Experience -->
       <section id="experience">
-        <h2 class="section-title">Experience & Education</h2>
+        <h2 class="section-title">Experience</h2>
         <div class="two-col">
           <div>
             <div class="card">
@@ -603,87 +707,99 @@
               <div class="card-body">
                 <ul class="list-compact">
                   <li>
-                    <strong>Research Assistant</strong>, Osaka University, Japan<br />
-                    <span class="card-meta">2023 – Present</span>
+                    <strong>Research Intern – CyberAgent, Inc.</strong><br />
+                    <span class="card-meta">Jul 2024 – present</span><br />
+                    <span class="card-meta">
+                      Conducting research on human image and video generation using
+                      cutting-edge computer graphics and image synthesis techniques.
+                      Developing photorealistic digital human technologies for advertising by
+                      combining CG and generative models.
+                    </span>
                   </li>
                   <li>
-                    <strong>Part-time Research Assistant</strong>, rinna Co., Ltd.<br />
+                    <strong>Research Assistant – Osaka University</strong><br />
+                    <span class="card-meta">Apr 2023 – present</span><br />
                     <span class="card-meta">
-                      Automatic Line Art Colorization &amp; Text-based talking head generation
+                      Independent research on computer vision and Generative AI, including
+                      diffusion models and GANs. Developing custom PyTorch/Docker pipelines
+                      and adapting open-source code for experimentation and validation.
                     </span>
-                    <span class="card-meta">2021 – 2022</span>
                   </li>
                   <li>
-                    <strong>Part-time Research Assistant</strong>, Panasonic Corp. & Osaka University<br />
+                    <strong>Research Intern – rinna Co., Ltd.</strong><br />
+                    <span class="card-meta">Aug 2021 – Sep 2021</span><br />
                     <span class="card-meta">
-                      Interactive segmentation for SEM images
+                      Worked on text- and audio-based talking head synthesis. Surveyed and
+                      evaluated existing methods, and explored approaches for lip-synced
+                      video generation from audio inputs.
                     </span>
-                    <span class="card-meta">2021</span>
                   </li>
                 </ul>
               </div>
             </div>
-
-            <!-- You can add internships here similarly -->
           </div>
 
           <div>
             <div class="card">
-              <div class="card-title">Education</div>
-              <ul class="list-compact">
-                <li>
-                  <strong>PhD in Information Science</strong><br />
-                  School of Information Science and Technology, Osaka University, Japan<br />
-                  <span class="card-meta">2023 – Present</span>
-                </li>
-                <li>
-                  <strong>Master of Information Science</strong><br />
-                  School of Information Science and Technology, Osaka University, Japan<br />
-                  <span class="card-meta">2021 – 2023</span>
-                </li>
-                <li>
-                  <strong>Bachelor of Engineering</strong><br />
-                  School of Engineering, Osaka University, Japan<br />
-                  <span class="card-meta">2017 – 2021</span>
-                </li>
-              </ul>
+              <div class="card-title">Teaching & Service</div>
+              <div class="card-body">
+                <p class="card-meta">
+                  (You can add TA roles, mentoring, or service activities here. If you prefer,
+                  leave this card as a placeholder for now.)
+                </p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-title">Other projects</div>
+              <div class="card-body">
+                <p class="card-meta">
+                  Ongoing projects include controllable eyeglass transfer in videos,
+                  distributionally controlled text-to-image generation, and quantum-inspired
+                  weakly supervised learning. Details are available upon request or in
+                  corresponding preprints.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Awards -->
+      <!-- Awards & Scholarships -->
       <section id="awards">
-        <h2 class="section-title">Awards & Fellowships</h2>
+        <h2 class="section-title">Awards & Scholarships</h2>
         <div class="two-col">
           <div>
             <div class="card">
+              <div class="card-title">Awards</div>
+              <ul class="list-compact">
+                <li>
+                  <strong>Interactive Presentation Award</strong>, MIRU 2023<br />
+                  <span class="card-meta">
+                    Fine-grained Facial Image Manipulation via Latent Space Decomposition.
+                  </span>
+                </li>
+                <li>
+                  <strong>Excellent Research Award for Female Graduate Students</strong><br />
+                  <span class="card-meta">Osaka University, 2023</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="card">
+              <div class="card-title">Scholarships & Fellowships</div>
               <ul class="list-compact">
                 <li>
                   <strong>Osaka University Fellowship for Information and AI Technologies</strong><br />
                   <span class="card-meta">2023 – 2025</span>
                 </li>
                 <li>
-                  <strong>Interactive Presentation Award</strong>, MIRU 2023<br />
-                  <span class="card-meta">Fine-grained Facial Image Manipulation via Latent Space Decomposition</span>
-                </li>
-                <li>
-                  <strong>Excellent Research Award for Female Graduate Students</strong><br />
-                  <span class="card-meta">2023</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <div class="card">
-              <div class="card-title">Scholarships</div>
-              <ul class="list-compact">
-                <li>
-                  <strong>MEXT Scholarship (Research Student)</strong><br />
+                  <strong>Japanese Government (MEXT) Scholarship – Research Student</strong><br />
                   <span class="card-meta">2021 – 2023</span>
                 </li>
                 <li>
-                  <strong>MEXT Scholarship (Undergraduate)</strong><br />
+                  <strong>Japanese Government (MEXT) Scholarship – Undergraduate Student</strong><br />
                   <span class="card-meta">2016 – 2021</span>
                 </li>
               </ul>
@@ -699,6 +815,7 @@
           <div class="card">
             <div class="card-title">Email</div>
             <div class="contact-value">
+              ian1204{at}gmail.com<br />
               chan.wengian{at}ist.osaka-u.ac.jp<br />
               (replace {at} with @)
             </div>
@@ -717,12 +834,11 @@
     </main>
 
     <footer>
-      &copy; <span id="year"></span> Chan Weng Ian. All rights reserved.
+      &copy; <span id="year"></span> Weng Ian (Ianna) Chan. All rights reserved.
     </footer>
   </div>
 
   <script>
-    // Update year in footer automatically
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
