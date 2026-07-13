@@ -1,0 +1,59 @@
+:root {
+  --yellow: #ffd500;
+  --blue: #248cff;
+  --purple: #6c55f0;
+  --text: #272727;
+  --soft: #585858;
+  --muted: #77776b;
+  --bg: #ffffff;
+  --white: #ffffff;
+  --border: #e3e3d2;
+  --gray: #f8f8f8;
+  --container: 980px;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--bg);
+  font-family: Inter, "Noto Sans", "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  line-height: 1.65;
+}
+a { color: var(--blue); text-decoration-thickness: 0.08em; text-underline-offset: 0.18em; }
+a:hover { color: var(--purple); }
+.container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--yellow);
+  border-bottom: 1px solid rgba(39, 39, 39, 0.12);
+}
+.nav { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.brand { color: var(--text); font-weight: 850; text-decoration: none; }
+.nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+.nav-links a { color: var(--text); text-decoration: none; font-size: 0.9rem; font-weight: 800; border-radius: 999px; padding: 9px 13px; }
+.nav-links a:hover { background: var(--white); }
+main { padding: 54px 0 84px; }
+.hero { border-bottom: 1px solid var(--border); padding-bottom: 36px; margin-bottom: 34px; }
+.kicker { color: var(--muted); font-size: 0.84rem; font-weight: 850; letter-spacing: 0.13em; text-transform: uppercase; margin: 0 0 8px; }
+h1 { font-size: clamp(2.05rem, 5.2vw, 3.05rem); line-height: 1.06; letter-spacing: -0.055em; margin: 0 0 12px; }
+.intro { color: var(--soft); font-size: 1.05rem; max-width: 46rem; margin: 0; }
+.year { font-size: 1.45rem; letter-spacing: -0.03em; margin: 34px 0 10px; }
+.pub-list { border-top: 1px solid var(--border); }
+.pub { padding: 18px 0; border-bottom: 1px solid var(--border); }
+.pub h2 { font-size: 1.1rem; line-height: 1.32; margin: 0 0 6px; letter-spacing: -0.02em; }
+.authors, .venue, .note { margin: 0; color: var(--soft); font-size: 0.96rem; }
+.venue { font-weight: 750; color: var(--muted); margin-top: 4px; }
+.links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 10px; }
+.pill { display: inline-flex; border-radius: 999px; background: var(--white); border: 1px solid var(--border); color: var(--text); padding: 7px 12px; font-size: 0.84rem; font-weight: 850; text-decoration: none; }
+.pill:hover { background: var(--yellow); color: var(--text); text-decoration: none; }
+.badge { display: inline-flex; border-radius: 999px; background: rgba(255, 213, 0, 0.38); padding: 3px 8px; font-size: 0.75rem; font-weight: 850; margin-left: 6px; }
+footer { background: var(--text); color: #ffffff; padding: 34px 0; }
+.footer-inner { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; color: rgba(255, 255, 255, 0.78); font-size: 0.92rem; }
+
+@media (max-width: 560px) {
+  .container { padding: 0 18px; }
+  .nav { align-items: flex-start; flex-direction: column; padding: 14px 0; }
+}
