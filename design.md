@@ -33,7 +33,7 @@
 | Text Primary | `#272727` | Headings and main body text |
 | Text Secondary | `#585858` | Metadata, captions, affiliations |
 | Text Muted | `#77776b` | Dates and subdued notes |
-| Page Background | `#fafaef` | Body background |
+| Page Background | `#ffffff` | Body background |
 | Warm Beige | `#f0f0e2` | Alternate section and media-placeholder background |
 | Light Gray | `#f8f8f8` | Nav pills and subtle surfaces |
 | Border Light | `#e3e3d2` | Row dividers and subtle separators |
@@ -101,7 +101,7 @@ Guidelines:
 
 - Desktop section spacing: `72px` to `96px`.
 - Mobile section spacing: `48px` to `64px`.
-- Use a warm off-white page background with white reserved for header, buttons, tags, and small link surfaces.
+- Use a white page background. The header uses Brand Yellow as the main surface; white is reserved for content background, buttons, tags, and small link surfaces.
 
 ### Homepage Sections
 
@@ -121,15 +121,14 @@ Guidelines:
 
 ### Header
 
-- White or translucent surface.
+- Yellow header surface.
 - Sticky positioning is allowed.
-- Use pill navigation with yellow hover/active states.
+- Use pill navigation with white hover/active states.
 
 ```css
 .site-header {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid #e3e3d2;
+  background: #ffd500;
+  border-bottom: 1px solid rgba(39, 39, 39, 0.12);
 }
 ```
 
@@ -253,7 +252,7 @@ Mobile rules:
 
 ```text
 Theme: Warm academic personal website
-Background: #fafaef
+Background: #ffffff
 White surfaces: #ffffff
 Primary text: #272727
 Secondary text: #585858
@@ -274,3 +273,11 @@ Projects: media left + content right on desktop, stacked on mobile
 - Use borders and whitespace for separation.
 - Keep boxed surfaces and shadows minimal; the current implementation uses linear project rows and publication rows.
 - The color palette remains the warm yellow-based palette defined above.
+
+
+## 12. File Organization
+
+- Keep website content in HTML files.
+- Keep styles in external CSS files under `assets/css/`.
+- The current homepage uses `assets/css/style.css`.
+- The publications page uses `assets/css/publication.css`.
