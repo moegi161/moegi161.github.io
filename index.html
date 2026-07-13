@@ -21,9 +21,7 @@
       --gray: #f8f8f8;
       --border: #e3e3d2;
       --white: #ffffff;
-      --shadow: 0 14px 34px rgba(39, 39, 39, 0.08);
-      --radius: 24px;
-      --container: 1120px;
+      --container: 1060px;
     }
 
     * { box-sizing: border-box; }
@@ -32,8 +30,8 @@
       margin: 0;
       color: var(--text);
       background:
-        radial-gradient(circle at 7% 0%, rgba(255, 213, 0, 0.22), transparent 31rem),
-        radial-gradient(circle at 93% 12%, rgba(255, 168, 226, 0.22), transparent 25rem),
+        radial-gradient(circle at 7% 0%, rgba(255, 213, 0, 0.2), transparent 31rem),
+        radial-gradient(circle at 93% 12%, rgba(255, 168, 226, 0.18), transparent 25rem),
         var(--bg);
       font-family: Inter, "Noto Sans", "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       line-height: 1.65;
@@ -48,11 +46,11 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
-    .nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .nav { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
     .brand { color: var(--text); font-size: 1.05rem; font-weight: 850; letter-spacing: 0.03em; text-decoration: none; }
     .nav-links { display: flex; align-items: center; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
     .nav-links a {
@@ -65,94 +63,83 @@
     }
     .nav-links a:hover { background: var(--yellow); color: var(--text); }
 
-    main { padding: 54px 0 0; }
-    section { margin: 0 0 82px; scroll-margin-top: 90px; }
-    .section-kicker { color: var(--text-muted); font-size: 0.86rem; font-weight: 850; letter-spacing: 0.13em; text-transform: uppercase; margin: 0 0 8px; }
-    .section-title { font-size: clamp(1.75rem, 3.3vw, 2.25rem); line-height: 1.18; margin: 0 0 22px; letter-spacing: -0.03em; }
+    main { padding: 56px 0 0; }
+    section { margin: 0 0 74px; scroll-margin-top: 88px; }
+    .section-kicker { color: var(--text-muted); font-size: 0.84rem; font-weight: 850; letter-spacing: 0.13em; text-transform: uppercase; margin: 0 0 8px; }
+    .section-title { font-size: clamp(1.72rem, 3.2vw, 2.2rem); line-height: 1.2; margin: 0 0 22px; letter-spacing: -0.03em; }
+    .section-rule { border-top: 1px solid var(--border); padding-top: 28px; }
 
-    .hero { display: grid; grid-template-columns: minmax(0, 1.2fr) 330px; gap: 28px; align-items: stretch; }
-    .hero-card, .profile-card, .card, .project-card, .news-item, .publication-link-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .hero-card { padding: clamp(26px, 5vw, 46px); }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 42px; align-items: start; border-bottom: 1px solid var(--border); padding-bottom: 56px; }
     .eyebrow { display: inline-flex; align-items: center; border-radius: 999px; background: var(--yellow); color: var(--text); padding: 6px 12px; font-size: 0.82rem; font-weight: 850; margin-bottom: 18px; }
-    h1 { font-size: clamp(2.25rem, 5.8vw, 3.45rem); line-height: 1.04; letter-spacing: -0.06em; margin: 0; }
-    .subtitle { color: var(--text-soft); font-size: clamp(1.08rem, 2vw, 1.28rem); margin: 12px 0 18px; max-width: 46rem; }
-    .bio { font-size: 1.02rem; margin: 0 0 22px; max-width: 46rem; }
+    h1 { font-size: clamp(2.15rem, 5.3vw, 3.25rem); line-height: 1.06; letter-spacing: -0.055em; margin: 0; }
+    .subtitle { color: var(--text-soft); font-size: clamp(1.06rem, 2vw, 1.22rem); margin: 12px 0 18px; max-width: 46rem; }
+    .bio { font-size: 1.02rem; margin: 0 0 22px; max-width: 48rem; }
     .button-row { display: flex; flex-wrap: wrap; gap: 10px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; border: 1px solid var(--border); padding: 11px 16px; color: var(--text); background: var(--white); font-size: 0.92rem; font-weight: 850; text-decoration: none; }
+    .button { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; border: 1px solid var(--border); padding: 10px 15px; color: var(--text); background: var(--white); font-size: 0.9rem; font-weight: 850; text-decoration: none; }
     .button.primary { background: var(--yellow); border-color: var(--yellow); }
     .button:hover { color: var(--text); background: var(--yellow); text-decoration: none; }
 
-    .profile-card { padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; }
+    .profile-block { border-top: 6px solid var(--yellow); padding-top: 18px; }
     .profile-placeholder {
       aspect-ratio: 1 / 1;
-      border-radius: 22px;
+      border-radius: 18px;
       background: linear-gradient(135deg, var(--yellow), var(--pink) 48%, var(--blue));
       display: grid;
       place-items: center;
       color: var(--text);
-      font-size: 4.5rem;
+      font-size: 4rem;
       font-weight: 900;
       letter-spacing: -0.08em;
+      margin-bottom: 16px;
     }
     .profile-meta { color: var(--text-soft); font-size: 0.94rem; }
     .profile-meta strong { display: block; color: var(--text); font-size: 1.05rem; margin-bottom: 4px; }
 
-    .news-list { display: grid; gap: 12px; }
-    .news-item { display: grid; grid-template-columns: 108px 1fr; gap: 16px; padding: 17px 20px; box-shadow: none; }
+    .news-list { border-top: 1px solid var(--border); }
+    .news-item { display: grid; grid-template-columns: 108px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); }
     .news-date { color: var(--text-muted); font-weight: 850; font-size: 0.9rem; }
 
     .interest-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-    .tag { display: inline-flex; align-items: center; border-radius: 999px; background: var(--white); border: 1px solid var(--border); padding: 10px 14px; color: var(--text); font-weight: 850; }
+    .tag { display: inline-flex; align-items: center; border-radius: 999px; background: var(--white); border: 1px solid var(--border); padding: 9px 13px; color: var(--text); font-weight: 850; }
     .tag.yellow { background: rgba(255, 213, 0, 0.35); }
     .tag.blue { background: rgba(36, 140, 255, 0.12); color: #1458a3; }
     .tag.purple { background: rgba(108, 85, 240, 0.12); color: #4832c5; }
     .tag.orange { background: rgba(255, 166, 70, 0.18); color: #9a4c00; }
 
-    .projects { display: grid; gap: 22px; }
-    .project-card { display: grid; grid-template-columns: 315px 1fr; gap: 26px; padding: 22px; }
-    .project-media { aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; background: var(--beige); display: grid; place-items: center; color: var(--text); font-weight: 900; text-align: center; padding: 20px; }
+    .projects { border-top: 1px solid var(--border); }
+    .project-row { display: grid; grid-template-columns: 300px 1fr; gap: 28px; padding: 26px 0; border-bottom: 1px solid var(--border); }
+    .project-media { aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: var(--beige); display: grid; place-items: center; color: var(--text); font-weight: 900; text-align: center; padding: 18px; }
     .project-media img, .project-media iframe { width: 100%; height: 100%; object-fit: cover; display: block; border: 0; }
     .project-media.video { padding: 0; background: #151b17; }
-    .project-media.pink { background: linear-gradient(135deg, rgba(255, 168, 226, 0.72), rgba(255, 213, 0, 0.82)); }
     .project-media.blue { background: linear-gradient(135deg, rgba(36, 140, 255, 0.45), rgba(178, 255, 83, 0.62)); }
     .project-media.purple { background: linear-gradient(135deg, rgba(108, 85, 240, 0.36), rgba(255, 168, 226, 0.72)); }
     .project-venue { color: var(--text-muted); font-size: 0.9rem; font-weight: 850; margin: 0 0 4px; }
-    .project-card h3 { font-size: clamp(1.18rem, 2.3vw, 1.46rem); line-height: 1.22; margin: 0 0 7px; letter-spacing: -0.03em; }
+    .project-row h3 { font-size: clamp(1.16rem, 2.2vw, 1.42rem); line-height: 1.24; margin: 0 0 7px; letter-spacing: -0.025em; }
     .authors { color: var(--text-soft); font-size: 0.95rem; margin: 0 0 9px; }
-    .description { margin: 0 0 15px; }
+    .description { margin: 0 0 14px; }
     .link-row { display: flex; flex-wrap: wrap; gap: 9px; }
-    .project-link { border-radius: 999px; background: var(--gray); color: var(--text); padding: 8px 12px; font-size: 0.86rem; font-weight: 850; text-decoration: none; }
+    .project-link { border-radius: 999px; background: var(--white); border: 1px solid var(--border); color: var(--text); padding: 7px 12px; font-size: 0.84rem; font-weight: 850; text-decoration: none; }
     .project-link:hover { background: var(--yellow); color: var(--text); text-decoration: none; }
     .project-publication-note { color: var(--text-soft); margin: 18px 0 0; }
 
-    .publication-link-card { padding: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center; }
-    .publication-link-card p { margin: 0; color: var(--text-soft); max-width: 680px; }
-
-    .contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-    .card { padding: 22px; box-shadow: none; }
-    .card h3 { margin: 0 0 8px; font-size: 1.15rem; }
-    .card p { margin: 0; color: var(--text-soft); }
+    .contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; border-top: 1px solid var(--border); padding-top: 24px; }
+    .contact-block h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .contact-block p { margin: 0; color: var(--text-soft); }
 
     footer { background: var(--text); color: var(--white); padding: 34px 0; margin-top: 34px; }
     footer a { color: var(--yellow); }
     .footer-inner { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; color: rgba(255,255,255,0.78); font-size: 0.92rem; }
 
     @media (max-width: 860px) {
-      .hero, .project-card, .contact-grid { grid-template-columns: 1fr; }
-      .profile-card { max-width: 420px; }
+      .hero, .project-row, .contact-grid { grid-template-columns: 1fr; }
+      .profile-block { max-width: 360px; }
       main { padding-top: 34px; }
-      section { margin-bottom: 62px; }
+      section { margin-bottom: 58px; }
     }
     @media (max-width: 560px) {
       .container { padding: 0 18px; }
       .nav { align-items: flex-start; flex-direction: column; padding: 14px 0; }
       .nav-links { justify-content: flex-start; }
-      .hero-card, .project-card { padding: 18px; }
       .news-item { grid-template-columns: 1fr; gap: 4px; }
     }
   </style>
@@ -173,7 +160,7 @@
 
   <main id="top" class="container">
     <section class="hero" id="about">
-      <div class="hero-card">
+      <div>
         <span class="eyebrow">Computer vision · Generative models</span>
         <h1>Weng Ian Chan</h1>
         <p class="subtitle">Ianna · Doctoral Student, Computer Vision Laboratory, The University of Osaka</p>
@@ -188,7 +175,7 @@
           <a class="button" href="publication.html">Publications</a>
         </div>
       </div>
-      <aside class="profile-card" aria-label="Profile summary">
+      <aside class="profile-block" aria-label="Profile summary">
         <div class="profile-placeholder" aria-label="Profile photo placeholder">IC</div>
         <div class="profile-meta">
           <strong>The University of Osaka</strong>
@@ -199,7 +186,7 @@
       </aside>
     </section>
 
-    <section id="news">
+    <section id="news" class="section-rule">
       <p class="section-kicker">News</p>
       <h2 class="section-title">Recent updates</h2>
       <div class="news-list">
@@ -211,7 +198,7 @@
       </div>
     </section>
 
-    <section id="interests">
+    <section id="interests" class="section-rule">
       <p class="section-kicker">Research interests</p>
       <h2 class="section-title">Topics I work on</h2>
       <div class="interest-grid">
@@ -225,11 +212,11 @@
       </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="section-rule">
       <p class="section-kicker">Projects</p>
       <h2 class="section-title">Research projects</h2>
       <div class="projects">
-        <article class="project-card">
+        <article class="project-row">
           <div class="project-media video"><iframe src="https://www.youtube.com/embed/pcHG0rpSDVA" title="FreeEyeglass project video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
           <div>
             <p class="project-venue">TMLR</p>
@@ -240,7 +227,7 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-row">
           <div class="project-media blue">Distributional Control</div>
           <div>
             <p class="project-venue">Pattern Recognition, 2026</p>
@@ -251,7 +238,7 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-row">
           <div class="project-media purple">V-PartSwap</div>
           <div>
             <p class="project-venue">CVPRW 2026</p>
@@ -262,9 +249,7 @@
           </div>
         </article>
 
-
-
-        <article class="project-card">
+        <article class="project-row">
           <div class="project-media blue">Skeletal Muscle Recovery</div>
           <div>
             <p class="project-venue">Scientific Reports, 2024</p>
@@ -275,7 +260,7 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-row">
           <div class="project-media purple">Similarity Proportion Loss</div>
           <div>
             <p class="project-venue">MICCAI ADS-MIA Workshop, 2024</p>
@@ -286,7 +271,7 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-row">
           <div class="project-media"><img src="img/thumbnail_2023miru.jpg" alt="Thumbnail for fine-grained facial image manipulation project" /></div>
           <div>
             <p class="project-venue">MIRU 2023 · Interactive Presentation Award</p>
@@ -296,7 +281,7 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-row">
           <div class="project-media"><img src="img/thumbnail_2021miru.jpg" alt="Thumbnail for conditional StyleGAN face synthesis project" /></div>
           <div>
             <p class="project-venue">MIRU 2021</p>
@@ -309,15 +294,15 @@
       <p class="project-publication-note">For a complete record, see the <a href="publication.html">full publication list</a>.</p>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="section-rule">
       <p class="section-kicker">Contact</p>
       <h2 class="section-title">Get in touch</h2>
       <div class="contact-grid">
-        <div class="card">
+        <div class="contact-block">
           <h3>Email</h3>
           <p>chan.wengian{at}ist.osaka-u.ac.jp<br />(replace {at} with @)</p>
         </div>
-        <div class="card">
+        <div class="contact-block">
           <h3>Affiliation</h3>
           <p>Computer Vision Laboratory<br />Graduate School of Information Science and Technology<br />The University of Osaka<br />1-5 Yamadaoka, Suita, Osaka 565-0871, Japan</p>
         </div>

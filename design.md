@@ -10,8 +10,8 @@
 - **Design direction**: modern academic personal site; clean, warm, research-focused, and easy to update.
 - **Tone**: approachable and scholarly rather than corporate or résumé-like.
 - **Homepage priority**: give visitors the main information immediately: name, affiliation, bio, news, research interests, projects, and contact.
-- **Information density**: medium-low. Use concise cards and project summaries, with detailed publication records on `publication.html`.
-- **Keywords**: academic, research, warm neutral, project cards, news timeline, readable, accessible, friendly.
+- **Information density**: medium-low. Prefer title, paragraph, line, and space separators over boxed cards. Use detailed publication records on `publication.html`.
+- **Keywords**: academic, research, warm neutral, linear sections, news timeline, readable, accessible, friendly.
 
 ---
 
@@ -36,9 +36,9 @@
 | Page Background | `#fafaef` | Body background |
 | Warm Beige | `#f0f0e2` | Alternate section and media-placeholder background |
 | Light Gray | `#f8f8f8` | Nav pills and subtle surfaces |
-| Border Light | `#e3e3d2` | Card borders and dividers |
+| Border Light | `#e3e3d2` | Row dividers and subtle separators |
 | Border Gray | `#b7b7b7` | Stronger separators |
-| White | `#ffffff` | Cards and header surface |
+| White | `#ffffff` | Header surface and small media/link surfaces |
 | Footer Background | `#272727` | Footer |
 | Footer Text | `#ffffff` | Text on dark footer |
 
@@ -73,7 +73,7 @@ font-family:
 | Hero Name | 44-58px | 850 | 1.05-1.15 | `#272727` |
 | Hero Subtitle | 18-23px | 500-650 | 1.4 | `#585858` |
 | Section Heading | 30-40px | 800 | 1.2 | `#272727` |
-| Card Title | 20-24px | 750 | 1.3 | `#272727` |
+| Project / item title | 20-24px | 750 | 1.3 | `#272727` |
 | Body | 16-18px | 400 | 1.65 | `#272727` |
 | Metadata | 14-15px | 500 | 1.5 | `#585858` |
 | Button / Nav | 14-15px | 800 | 1.2 | `#272727` |
@@ -101,7 +101,7 @@ Guidelines:
 
 - Desktop section spacing: `72px` to `96px`.
 - Mobile section spacing: `48px` to `64px`.
-- Use a warm off-white page background and white cards.
+- Use a warm off-white page background with white reserved for header, buttons, tags, and small link surfaces.
 
 ### Homepage Sections
 
@@ -154,19 +154,18 @@ Guidelines:
 }
 ```
 
-### Cards
+### Section Separators
+
+Use title, paragraph, line, and whitespace as the default structure. Boxed cards should be avoided unless a media-heavy item truly needs a visual boundary.
 
 ```css
-.card {
-  background: #ffffff;
-  border: 1px solid #e3e3d2;
-  border-radius: 24px;
-  padding: 24px;
-  box-shadow: 0 14px 34px rgba(39, 39, 39, 0.08);
+.section-rule {
+  border-top: 1px solid #e3e3d2;
+  padding-top: 28px;
 }
 ```
 
-### Project Cards
+### Project Rows
 
 Each project should include:
 
@@ -182,6 +181,8 @@ Desktop layout:
 ```text
 [ media thumbnail/video ] [ title, authors, venue, description, links ]
 ```
+
+Projects should be separated by a top/bottom border and generous spacing, not a heavy card shadow.
 
 Mobile layout:
 
@@ -211,7 +212,7 @@ Mobile layout:
 
 Mobile rules:
 
-- Stack hero content and project cards vertically.
+- Stack hero content and project rows vertically.
 - Keep body text at least `16px`.
 - Make pill buttons wrap naturally.
 - Reduce hero name to around `38px`.
@@ -234,7 +235,7 @@ Mobile rules:
 
 - Keep the homepage concise and research-oriented.
 - Put projects before CV-like details.
-- Use cards, thumbnails, and links to make work scannable.
+- Use project rows, thumbnails, clear titles, short paragraphs, and links to make work scannable.
 - Keep news easy to update.
 - Use `publication.html` for the full publication list.
 
@@ -253,14 +254,23 @@ Mobile rules:
 ```text
 Theme: Warm academic personal website
 Background: #fafaef
-Cards: #ffffff
+White surfaces: #ffffff
 Primary text: #272727
 Secondary text: #585858
 Primary accent: #ffd500
 Link accent: #248cff
 Secondary accents: #ffa8e2, #b2ff53, #ffa646, #6c55f0
 Font: Inter / Noto Sans / system sans-serif
-Cards: 24px radius, subtle border, soft shadow
+Rows: top/bottom borders, generous spacing, minimal shadows
 Buttons: pill shape, 50px radius
 Projects: media left + content right on desktop, stacked on mobile
 ```
+
+
+## 11. Updated Layout Preference
+
+- Do not overuse card components.
+- Prefer a simple editorial rhythm: title, paragraph, line, space.
+- Use borders and whitespace for separation.
+- Keep boxed surfaces and shadows minimal; the current implementation uses linear project rows and publication rows.
+- The color palette remains the warm yellow-based palette defined above.
