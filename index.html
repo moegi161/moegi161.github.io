@@ -2,866 +2,336 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Weng Ian Chan – Research</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Personal website of Weng Ian (Ianna) Chan, doctoral student at The University of Osaka, working on computer vision and generative models."
-  />
+  <title>Weng Ian Chan – Academic Website</title>
+  <meta name="description" content="Academic website of Weng Ian (Ianna) Chan, doctoral student at The University of Osaka working on computer vision, generative models, and controllable image and video synthesis." />
   <style>
     :root {
-      /* Color palette based on your suggestion */
-      --accent: #617b47;        /* deep green */
-      --accent-bright: #8dba30; /* bright green */
-      --accent-soft: rgba(141, 186, 48, 0.12);
-      --highlight-yellow: #f6b827;
-      --highlight-yellow-soft: rgba(246, 184, 39, 0.12);
-      --highlight-orange: #f87d08;
-      --bg: #fdfdf8;           /* soft warm white */
-      --bg-alt: #ffffff;
-      --bg-muted: #f5f6eb;
-      --border: #dde1cf;
-      --text: #141414;
-      --text-soft: #54585a;
-      --max-width: 960px;
-      --radius-lg: 18px;
-      --radius-xl: 24px;
-      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.12);
+      --yellow: #ffd500;
+      --pink: #ffa8e2;
+      --blue: #248cff;
+      --lime: #b2ff53;
+      --orange: #ffa646;
+      --purple: #6c55f0;
+      --text: #272727;
+      --text-soft: #585858;
+      --text-muted: #77776b;
+      --bg: #fafaef;
+      --beige: #f0f0e2;
+      --gray: #f8f8f8;
+      --border: #e3e3d2;
+      --white: #ffffff;
+      --shadow: 0 14px 34px rgba(39, 39, 39, 0.08);
+      --radius: 24px;
+      --container: 1120px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background:
-        radial-gradient(circle at top left, #f6fbe8 0, #fdfdf8 48%, #faf9f3 100%);
+      margin: 0;
       color: var(--text);
-      line-height: 1.6;
+      background:
+        radial-gradient(circle at 7% 0%, rgba(255, 213, 0, 0.22), transparent 31rem),
+        radial-gradient(circle at 93% 12%, rgba(255, 168, 226, 0.22), transparent 25rem),
+        var(--bg);
+      font-family: Inter, "Noto Sans", "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+    a { color: var(--blue); text-decoration-thickness: 0.08em; text-underline-offset: 0.18em; }
+    a:hover { color: var(--purple); }
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .page {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 24px 18px 80px;
-    }
-
-    /* Navigation */
-    header {
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      backdrop-filter: blur(16px);
-      background: linear-gradient(
-        to bottom,
-        rgba(250, 250, 244, 0.96),
-        rgba(250, 250, 244, 0.86),
-        transparent
-      );
-      border-bottom: 1px solid rgba(221, 225, 207, 0.8);
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
     }
-
-    .nav-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 10px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .nav-brand {
-      font-weight: 640;
-      font-size: 1rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #18181b;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      font-size: 0.9rem;
-      color: var(--text-soft);
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
+    .nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { color: var(--text); font-size: 1.05rem; font-weight: 850; letter-spacing: 0.03em; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
     .nav-links a {
-      position: relative;
-      padding-bottom: 2px;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 1.5px;
-      background: var(--accent);
-      transition: width 0.2s ease-out;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      border: 1px solid rgba(111, 118, 96, 0.6);
-      padding: 7px 14px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      background: #ffffff;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
-      gap: 6px;
-      white-space: nowrap;
       color: var(--text);
-    }
-
-    .btn:hover {
-      border-color: var(--accent);
       text-decoration: none;
-    }
-
-    main {
-      margin-top: 32px;
-    }
-
-    section {
-      margin-bottom: 32px;
-    }
-
-    .section-title {
-      font-size: 1.05rem;
-      font-weight: 640;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #6b7280;
-      margin-bottom: 14px;
-    }
-
-    /* Hero */
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-      gap: 24px;
-      align-items: stretch;
-      margin-bottom: 32px;
-    }
-
-    .hero-main {
-      background: var(--bg-alt);
-      border-radius: var(--radius-xl);
-      padding: 22px 24px 20px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(221, 225, 207, 0.9);
-    }
-
-    .hero-name {
-      font-size: clamp(1.8rem, 4vw, 2.2rem);
-      font-weight: 720;
-      letter-spacing: 0.02em;
-      margin-bottom: 2px;
-    }
-
-    .hero-subname {
-      font-size: 0.95rem;
-      color: var(--text-soft);
-      margin-bottom: 8px;
-    }
-
-    .hero-role {
-      font-size: 0.95rem;
-      font-weight: 520;
-      color: var(--accent);
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      display: inline-block;
-      margin-bottom: 14px;
-    }
-
-    .hero-text {
-      font-size: 0.95rem;
-      color: var(--text-soft);
-      margin-bottom: 12px;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 10px;
-    }
-
-    .hero-tag {
-      font-size: 0.78rem;
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: var(--bg-muted);
-      color: #1f2933;
-      border: 1px solid rgba(192, 197, 169, 0.9);
-    }
-
-    .hero-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 8px;
       font-size: 0.9rem;
-      color: var(--text-soft);
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 9px 13px;
     }
+    .nav-links a:hover { background: var(--yellow); color: var(--text); }
 
-    .hero-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
+    main { padding: 54px 0 0; }
+    section { margin: 0 0 82px; scroll-margin-top: 90px; }
+    .section-kicker { color: var(--text-muted); font-size: 0.86rem; font-weight: 850; letter-spacing: 0.13em; text-transform: uppercase; margin: 0 0 8px; }
+    .section-title { font-size: clamp(1.75rem, 3.3vw, 2.25rem); line-height: 1.18; margin: 0 0 22px; letter-spacing: -0.03em; }
 
-    .hero-meta {
-      background: #21231c;
-      color: #e5e7eb;
-      border-radius: var(--radius-xl);
-      padding: 18px 18px 16px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(97, 123, 71, 0.9);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .hero-meta-title {
-      font-size: 0.85rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #a3a3a3;
-      margin-bottom: 4px;
-    }
-
-    .hero-meta-main {
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-    }
-
-    .hero-meta-main strong {
-      font-weight: 600;
-      color: #f9fafb;
-    }
-
-    .hero-meta-list {
-      list-style: none;
-      font-size: 0.83rem;
-      color: #d4d4d4;
-      margin-bottom: 6px;
-    }
-
-    .hero-meta-list li {
-      margin-bottom: 3px;
-    }
-
-    .hero-meta-foot {
-      font-size: 0.8rem;
-      color: #b0b4a2;
-      margin-top: 4px;
-    }
-
-    /* Layout helpers */
-
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 24px;
-      align-items: flex-start;
-    }
-
-    .card {
-      background: var(--bg-alt);
-      border-radius: var(--radius-lg);
-      padding: 16px 18px 14px;
+    .hero { display: grid; grid-template-columns: minmax(0, 1.2fr) 330px; gap: 28px; align-items: stretch; }
+    .hero-card, .profile-card, .card, .project-card, .news-item, .publication-link-card {
+      background: var(--white);
       border: 1px solid var(--border);
-      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
+    .hero-card { padding: clamp(26px, 5vw, 46px); }
+    .eyebrow { display: inline-flex; align-items: center; border-radius: 999px; background: var(--yellow); color: var(--text); padding: 6px 12px; font-size: 0.82rem; font-weight: 850; margin-bottom: 18px; }
+    h1 { font-size: clamp(2.25rem, 5.8vw, 3.45rem); line-height: 1.04; letter-spacing: -0.06em; margin: 0; }
+    .subtitle { color: var(--text-soft); font-size: clamp(1.08rem, 2vw, 1.28rem); margin: 12px 0 18px; max-width: 46rem; }
+    .bio { font-size: 1.02rem; margin: 0 0 22px; max-width: 46rem; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; border: 1px solid var(--border); padding: 11px 16px; color: var(--text); background: var(--white); font-size: 0.92rem; font-weight: 850; text-decoration: none; }
+    .button.primary { background: var(--yellow); border-color: var(--yellow); }
+    .button:hover { color: var(--text); background: var(--yellow); text-decoration: none; }
 
-    .card + .card {
-      margin-top: 12px;
-    }
-
-    .card-title {
-      font-size: 0.95rem;
-      font-weight: 620;
-      margin-bottom: 6px;
-      color: #111827;
-    }
-
-    .card-subtitle {
-      font-size: 0.88rem;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
-
-    .card-meta {
-      font-size: 0.82rem;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
-
-    .card-body {
-      font-size: 0.9rem;
-      color: var(--text-soft);
-    }
-
-    .list-compact {
-      list-style: none;
-      padding-left: 0;
-      font-size: 0.9rem;
-      color: var(--text-soft);
-    }
-
-    .list-compact li + li {
-      margin-top: 4px;
-    }
-
-    .list-compact strong {
-      color: #111827;
-    }
-
-    /* Publications */
-
-    .item {
-      padding: 10px 12px;
-      border-radius: 14px;
-      transition: background 0.15s ease-out, transform 0.15s ease-out;
-    }
-
-    .item:hover {
-      background: #f4f7e6;
-      transform: translateY(-1px);
-    }
-
-    .item-title {
-      font-size: 0.96rem;
-      font-weight: 620;
-    }
-
-    .item-authors {
-      font-size: 0.9rem;
-      color: var(--text-soft);
-      margin-top: 2px;
-    }
-
-    .item-venue {
-      font-size: 0.87rem;
-      color: var(--text-soft);
-      margin-top: 2px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      background: var(--highlight-yellow-soft);
-      color: #8b5b10;
-      border: 1px solid #facc15;
-      font-size: 0.75rem;
-      padding: 2px 8px;
-      margin-left: 6px;
-    }
-
-    .item-meta {
-      font-size: 0.82rem;
-      color: var(--text-soft);
-      margin-top: 3px;
-    }
-
-    .full-list-note {
-      font-size: 0.88rem;
-      color: var(--text-soft);
-      margin-top: 8px;
-    }
-
-    /* Contact */
-
-    .contact-grid {
+    .profile-card { padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; }
+    .profile-placeholder {
+      aspect-ratio: 1 / 1;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--yellow), var(--pink) 48%, var(--blue));
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-      gap: 20px;
+      place-items: center;
+      color: var(--text);
+      font-size: 4.5rem;
+      font-weight: 900;
+      letter-spacing: -0.08em;
     }
+    .profile-meta { color: var(--text-soft); font-size: 0.94rem; }
+    .profile-meta strong { display: block; color: var(--text); font-size: 1.05rem; margin-bottom: 4px; }
 
-    .contact-value {
-      font-size: 0.92rem;
-      margin-top: 3px;
-      word-break: break-all;
-      color: var(--text-soft);
+    .news-list { display: grid; gap: 12px; }
+    .news-item { display: grid; grid-template-columns: 108px 1fr; gap: 16px; padding: 17px 20px; box-shadow: none; }
+    .news-date { color: var(--text-muted); font-weight: 850; font-size: 0.9rem; }
+
+    .interest-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tag { display: inline-flex; align-items: center; border-radius: 999px; background: var(--white); border: 1px solid var(--border); padding: 10px 14px; color: var(--text); font-weight: 850; }
+    .tag.yellow { background: rgba(255, 213, 0, 0.35); }
+    .tag.blue { background: rgba(36, 140, 255, 0.12); color: #1458a3; }
+    .tag.purple { background: rgba(108, 85, 240, 0.12); color: #4832c5; }
+    .tag.orange { background: rgba(255, 166, 70, 0.18); color: #9a4c00; }
+
+    .projects { display: grid; gap: 22px; }
+    .project-card { display: grid; grid-template-columns: 315px 1fr; gap: 26px; padding: 22px; }
+    .project-media { aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; background: var(--beige); display: grid; place-items: center; color: var(--text); font-weight: 900; text-align: center; padding: 20px; }
+    .project-media img, .project-media iframe { width: 100%; height: 100%; object-fit: cover; display: block; border: 0; }
+    .project-media.video { padding: 0; background: #151b17; }
+    .project-media.pink { background: linear-gradient(135deg, rgba(255, 168, 226, 0.72), rgba(255, 213, 0, 0.82)); }
+    .project-media.blue { background: linear-gradient(135deg, rgba(36, 140, 255, 0.45), rgba(178, 255, 83, 0.62)); }
+    .project-media.purple { background: linear-gradient(135deg, rgba(108, 85, 240, 0.36), rgba(255, 168, 226, 0.72)); }
+    .project-venue { color: var(--text-muted); font-size: 0.9rem; font-weight: 850; margin: 0 0 4px; }
+    .project-card h3 { font-size: clamp(1.18rem, 2.3vw, 1.46rem); line-height: 1.22; margin: 0 0 7px; letter-spacing: -0.03em; }
+    .authors { color: var(--text-soft); font-size: 0.95rem; margin: 0 0 9px; }
+    .description { margin: 0 0 15px; }
+    .link-row { display: flex; flex-wrap: wrap; gap: 9px; }
+    .project-link { border-radius: 999px; background: var(--gray); color: var(--text); padding: 8px 12px; font-size: 0.86rem; font-weight: 850; text-decoration: none; }
+    .project-link:hover { background: var(--yellow); color: var(--text); text-decoration: none; }
+    .project-publication-note { color: var(--text-soft); margin: 18px 0 0; }
+
+    .publication-link-card { padding: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center; }
+    .publication-link-card p { margin: 0; color: var(--text-soft); max-width: 680px; }
+
+    .contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card { padding: 22px; box-shadow: none; }
+    .card h3 { margin: 0 0 8px; font-size: 1.15rem; }
+    .card p { margin: 0; color: var(--text-soft); }
+
+    footer { background: var(--text); color: var(--white); padding: 34px 0; margin-top: 34px; }
+    footer a { color: var(--yellow); }
+    .footer-inner { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; color: rgba(255,255,255,0.78); font-size: 0.92rem; }
+
+    @media (max-width: 860px) {
+      .hero, .project-card, .contact-grid { grid-template-columns: 1fr; }
+      .profile-card { max-width: 420px; }
+      main { padding-top: 34px; }
+      section { margin-bottom: 62px; }
     }
-
-    footer {
-      margin-top: 36px;
-      font-size: 0.8rem;
-      color: var(--text-soft);
-      text-align: center;
-    }
-
-    /* Responsive */
-
-    @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .two-col {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .contact-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .nav-inner {
-        padding-inline: 14px;
-      }
-      .page {
-        padding-inline: 14px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .nav-links {
-        justify-content: flex-start;
-      }
-      .hero-main {
-        padding: 18px 16px 16px;
-      }
-      .hero-meta {
-        padding: 14px 14px 12px;
-      }
+    @media (max-width: 560px) {
+      .container { padding: 0 18px; }
+      .nav { align-items: flex-start; flex-direction: column; padding: 14px 0; }
+      .nav-links { justify-content: flex-start; }
+      .hero-card, .project-card { padding: 18px; }
+      .news-item { grid-template-columns: 1fr; gap: 4px; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="nav-inner">
-      <div class="nav-brand">WENG IAN CHAN</div>
-      <nav class="nav-links">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">Weng Ian Chan</a>
+      <nav class="nav-links" aria-label="Main navigation">
         <a href="#about">About</a>
-        <a href="#publications">Publications</a>
-        <a href="#experience">Experience</a>
-        <a href="#awards">Awards</a>
+        <a href="#news">News</a>
+        <a href="#projects">Projects</a>
+        <a href="publication.html">Publications</a>
         <a href="#contact">Contact</a>
-        <!-- TODO: replace cv.pdf with your actual file name -->
-        <a href="cv.pdf" class="btn"><span>CV</span><span>↗</span></a>
       </nav>
     </div>
   </header>
 
-  <div class="page">
-    <main>
-      <!-- Hero -->
-      <section class="hero" id="top">
-        <div class="hero-main">
-          <div class="hero-name">Weng Ian Chan</div>
-          <div class="hero-subname">Ianna</div>
-          <div class="hero-role">
-            Doctoral Student, Computer Vision Lab, The University of Osaka
-          </div>
-          <p class="hero-text">
-            I am a doctoral student in the Computer Vision Laboratory at The University of Osaka, Japan.
-            My research focuses on computer vision and generative models, with a particular interest
-            in controllable image and video synthesis, diffusion models, and their applications.
-          </p>
-          <div class="hero-tags">
-            <span class="hero-tag">Generative models</span>
-            <span class="hero-tag">Image synthesis</span>
-            <span class="hero-tag">Image / video editing</span>
-            <span class="hero-tag">Diffusion models</span>
-            <!--<span class="hero-tag">Fair & robust generation</span>-->
-          </div>
-          <div class="hero-links">
-            <a href="mailto:chan.wengian@ist.osaka-u.ac.jp">Osaka U email</a>
-            <span>·</span>
-            <a href="https://github.com/moegi161" target="_blank" rel="noopener">
-              GitHub
-            </a>
-            <span>·</span>
-            <a href="https://scholar.google.com/citations?user=TcdTtjIAAAAJ" target="_blank" rel="noopener">
-              Google Scholar
-            <a href="https://www.linkedin.com/in/weng-ian-chan-ianna/" target="_blank" rel="noopener"> Linkedin
-            </a>
-          </div>
+  <main id="top" class="container">
+    <section class="hero" id="about">
+      <div class="hero-card">
+        <span class="eyebrow">Computer vision · Generative models</span>
+        <h1>Weng Ian Chan</h1>
+        <p class="subtitle">Ianna · Doctoral Student, Computer Vision Laboratory, The University of Osaka</p>
+        <p class="bio">
+          I am a doctoral student in the Computer Vision Laboratory at The University of Osaka, Japan, advised by Prof. Fumio Okura. My research focuses on computer vision and generative models, especially controllable image and video synthesis, diffusion models, latent-space editing, and applications that make generative models more reliable and useful in real-world settings.
+        </p>
+        <div class="button-row">
+          <a class="button primary" href="mailto:chan.wengian@ist.osaka-u.ac.jp">Email</a>
+          <a class="button" href="https://scholar.google.com/citations?user=TcdTtjIAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="button" href="https://github.com/moegi161" target="_blank" rel="noopener">GitHub</a>
+          <a class="button" href="https://www.linkedin.com/in/weng-ian-chan-ianna/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="button" href="publication.html">Publications</a>
         </div>
+      </div>
+      <aside class="profile-card" aria-label="Profile summary">
+        <div class="profile-placeholder" aria-label="Profile photo placeholder">IC</div>
+        <div class="profile-meta">
+          <strong>The University of Osaka</strong>
+          Graduate School of Information Science and Technology<br />
+          Location: Osaka, Japan<br />
+          Languages: Cantonese, Mandarin, Japanese, English
+        </div>
+      </aside>
+    </section>
 
-        <aside class="hero-meta">
+    <section id="news">
+      <p class="section-kicker">News</p>
+      <h2 class="section-title">Recent updates</h2>
+      <div class="news-list">
+        <article class="news-item"><div class="news-date">2026.07</div><div>FreeEyeglass was accepted to <em>TMLR</em>.</div></article>
+        <article class="news-item"><div class="news-date">2026</div><div>Instance-wise Distribution Control of Text-to-image Diffusion Models appears in <em>Pattern Recognition</em>.</div></article>
+        <article class="news-item"><div class="news-date">MIRU 2025</div><div>FreeEyeglass received the Audience Award and Student Encouragement Award.</div></article>
+        <article class="news-item"><div class="news-date">2024–2025</div><div>Visited University of California, Merced, in Prof. Ming-Hsuan Yang's lab.</div></article>
+        <article class="news-item"><div class="news-date">2024</div><div>Research internship at CyberAgent, Inc. on human image and video generation.</div></article>
+      </div>
+    </section>
+
+    <section id="interests">
+      <p class="section-kicker">Research interests</p>
+      <h2 class="section-title">Topics I work on</h2>
+      <div class="interest-grid">
+        <span class="tag yellow">Controllable generation</span>
+        <span class="tag blue">Computer vision</span>
+        <span class="tag purple">Diffusion models</span>
+        <span class="tag">GANs and latent spaces</span>
+        <span class="tag orange">Image / video editing</span>
+        <span class="tag">Fair and robust generation</span>
+        <span class="tag">Medical imaging applications</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <p class="section-kicker">Projects</p>
+      <h2 class="section-title">Research projects</h2>
+      <div class="projects">
+        <article class="project-card">
+          <div class="project-media video"><iframe src="https://www.youtube.com/embed/pcHG0rpSDVA" title="FreeEyeglass project video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
           <div>
-            <div class="hero-meta-title">Affiliation</div>
-            <div class="hero-meta-main">
-              <strong>Computer Vision Laboratory</strong><br />
-              Graduate School of Information Science and Technology<br />
-              The University of Osaka, Japan
-            </div>
-            <ul class="hero-meta-list">
-              <li>Doctoral Student in Information Science</li>
-              <li>Advised by Prof. Fumio Okura</li>
-              <li>Location: Osaka, Japan</li>
-            </ul>
-            <div class="hero-meta-title" style="margin-top:10px;">Languages</div>
-            <ul class="hero-meta-list">
-              <li>Cantonese (Native)</li>
-              <li>Mandarin (Fluent)</li>
-              <li>Japanese (Fluent, JLPT N1+)</li>
-              <li>English (Fluent, TOEIC L&amp;R 990)</li>
-            </ul>
+            <p class="project-venue">TMLR</p>
+            <h3>FreeEyeglass: Training-free and Mask-free Eyeglass Transfer for Facial Videos</h3>
+            <p class="authors"><strong>Weng Ian Chan</strong>, Yuantian Huang, Xingchao Yang, Fumio Okura, Takafumi Taketomi</p>
+            <p class="description">A training-free and mask-free approach for transferring eyeglasses in facial videos, designed for practical video editing without requiring additional model training or manually prepared masks.</p>
+            <div class="link-row"><a class="project-link" href="https://moegi161.github.io/freeeyeglass-project/" target="_blank" rel="noopener">Project page</a></div>
           </div>
-          <div class="hero-meta-foot">
-            I am broadly interested in making generative models more controllable,
-            reliable, and useful for real-world applications.
-          </div>
-        </aside>
-      </section>
+        </article>
 
-      <!-- About & Skills -->
-      <section id="about">
-        <h2 class="section-title">About & Research Interests</h2>
-        <div class="two-col">
-          <div class="card">
-            <div class="card-title">About me</div>
-            <div class="card-body">
-              I am currently a doctoral student in Multimedia Engineering at the University of Osaka,
-              supported by the University of Osaka Fellowship for Information and AI Technologies.
-              I have over four years of experience working with advanced image synthesis techniques,
-              including diffusion models and GANs, and enjoy bridging theory, implementation, and
-              practical applications across different domains.
-            </div>
+        <article class="project-card">
+          <div class="project-media blue">Distributional Control</div>
+          <div>
+            <p class="project-venue">Pattern Recognition, 2026</p>
+            <h3>Instance-wise Distribution Control of Text-to-image Diffusion Models</h3>
+            <p class="authors"><strong>Weng Ian Chan</strong>, Hiroaki Santo, Yasuyuki Matsushita, Fumio Okura</p>
+            <p class="description">A method for controlling multi-instance distributions in text-to-image diffusion models, with the goal of improving controllability and representation of underrepresented groups.</p>
+            <div class="link-row"><a class="project-link" href="https://doi.org/10.1016/j.patcog.2025.112614" target="_blank" rel="noopener">Paper</a></div>
           </div>
-          <div class="card">
-            <div class="card-title">Research interests</div>
-            <ul class="list-compact">
-              <li>Controllable image and video synthesis</li>
-              <li>Latent-space editing and exploration</li>
-              <li>Diffusion and GAN models</li>
-              <li>Fairness and robustness in generative models</li>
-              <li>Applications to medical imaging</li>
-            </ul>
-          </div>
-        </div>
+        </article>
 
-        <div class="two-col" style="margin-top:16px;">
-           <div class="card">
-            <div class="card-title">Education</div>
-            <ul class="list-compact">
-              <li>
-                <strong>PhD in Information Science</strong><br />
-                Multimedia Engineering, The University of Osaka, Japan<br />
-                <span class="card-meta">Apr 2023 – present (expected Oct 2026)</span>
-              </li>
-              <li>
-                <strong>Master of Information Science</strong><br />
-                Multimedia Engineering, The University of Osaka, Japan<br />
-                <span class="card-meta">Apr 2021 – Mar 2023</span>
-              </li>
-              <li>
-                <strong>Bachelor of Engineering</strong><br />
-                Electronic and Information Engineering, The University of Osaka, Japan<br />
-                <span class="card-meta">Apr 2017 – Mar 2021</span>
-              </li>
-            </ul>
+        <article class="project-card">
+          <div class="project-media purple">V-PartSwap</div>
+          <div>
+            <p class="project-venue">CVPRW 2026</p>
+            <h3>V-PartSwap</h3>
+            <p class="authors"><strong>Weng Ian Chan</strong> et al.</p>
+            <p class="description">A project on part-level visual swapping and editing, presented at a CVPR workshop.</p>
+            <div class="link-row"><a class="project-link" href="https://openreview.net/forum?id=ls6tDTvkuY" target="_blank" rel="noopener">OpenReview</a></div>
           </div>
-          
-          <div class="card">
-            <div class="card-title">Skills</div>
-            <ul class="list-compact">
-              <li>
-                <strong>Programming</strong>: Python
-              </li>
-              <li>
-                <strong>Libraries</strong>: PyTorch, NumPy, Pandas, OpenCV, Accelerate, Diffusers
-              </li>
-              <li>
-                <strong>Technologies</strong>: Linux, CUDA, Docker, Git, LaTeX
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Publications -->
-      <section id="publications">
-        <h2 class="section-title">Selected Publications</h2>
-
-        <!-- TODO: fill in co-authors exactly as you prefer -->
-        <div class="item">
-          <div class="item-title">
-            Instance-wise Distribution Control of Text-to-image Diffusion Models
-          </div>
-          <div class="item-authors">
-            <strong>Weng Ian Chan</strong>, Hiroaki Santo, Yasuyuki Matsushita, Fumio Okura
-          </div>
-          <div class="item-venue">
-            Pattern Recognition, vol. 172, part C, 2026, article 112614.
-          </div>
-          <div class="item-meta">
-            Fine-tuning text-to-image diffusion models to control multi-instance distributions and
-            improve representation of underrepresented groups.
-            <!-- DOI from your CV; you can make it clickable if you like -->
-            <a href="https://doi.org/10.1016/j.patcog.2025.112614"> Paper </a>
-          </div>
-        </div>
-
-        <!-- Scientific Reports 2024 -->
-        <div class="item">
-          <div class="item-title">
-            Quantifying the recovery process of skeletal muscle on hematoxylin and eosin-stained images via learning from label proportion
-          </div>
-          <div class="item-authors">
-            Yu Yamaoka, <strong>Weng Ian Chan</strong>, Shigeto Seno, Kanako Iwamori,
-            So-ichiro Fukada, Hideo Matsuda
-          </div>
-          <div class="item-venue">
-            Scientific Reports, 14(1):27044, 2024.
-          </div>
-          <div class="item-meta">
-            Applies learning from label proportion to quantify skeletal muscle recovery
-            on hematoxylin and eosin-stained images, enabling weakly supervised
-            analysis of tissue-level recovery processes.
-            <a href="https://www.nature.com/articles/s41598-024-78433-z"> Paper </a>
-          </div>
-        </div>
+        </article>
 
 
-        <div class="item">
-          <div class="item-title">
-            Learning from Similarity Proportion Loss for Classifying Skeletal Muscle Recovery Stages
-          </div>
-          <div class="item-authors">
-            Yu Yamaoka, <strong>Weng Ian Chan</strong>, Shigeto Seno, Soichiro Fukada, Hideo Matsuda
-          </div>
-          <div class="item-venue">
-            MICCAI Workshop on Advancing Data Solutions in Medical Imaging AI (ADS-MIA), 2024.
-          </div>
-          <div class="item-meta">
-            A label-proportion-based learning approach for assessing skeletal muscle recovery, combining
-            weak supervision with medical imaging.
-            <a href="https://arxiv.org/abs/2505.04150"> Paper </a>
-          </div>
-        </div>
 
-        <!--<div class="item">
-          <div class="item-title">
-            Fine-grained Facial Image Manipulation via Latent Space Decomposition
-            <span class="badge">Interactive Presentation Award</span>
+        <article class="project-card">
+          <div class="project-media blue">Skeletal Muscle Recovery</div>
+          <div>
+            <p class="project-venue">Scientific Reports, 2024</p>
+            <h3>Quantifying the recovery process of skeletal muscle on hematoxylin and eosin-stained images via learning from label proportion</h3>
+            <p class="authors">Yu Yamaoka, <strong>Weng Ian Chan</strong>, Shigeto Seno, Kanako Iwamori, So-ichiro Fukada, Hideo Matsuda</p>
+            <p class="description">A weakly supervised medical-imaging project that quantifies skeletal muscle recovery from hematoxylin and eosin-stained images using learning from label proportion.</p>
+            <div class="link-row"><a class="project-link" href="https://www.nature.com/articles/s41598-024-78433-z" target="_blank" rel="noopener">Paper</a></div>
           </div>
-          <div class="item-authors">
-            <strong>Weng Ian Chan</strong>, Xu Cao, Hiroaki Santo, Fumio Okura
-          </div>
-          <div class="item-venue">
-            Meeting on Image Recognition and Understanding (MIRU), 2023.
-          </div>
-          <div class="item-meta">
-            Decomposing the latent space of StyleGAN to enable fine-grained control of facial expressions.
-          </div>
-        </div>
+        </article>
 
-        <div class="item">
-          <div class="item-title">
-            Conditional StyleGAN with Multi-resolution Classifiers for Attribute-driven Face Synthesis
+        <article class="project-card">
+          <div class="project-media purple">Similarity Proportion Loss</div>
+          <div>
+            <p class="project-venue">MICCAI ADS-MIA Workshop, 2024</p>
+            <h3>Learning from Similarity Proportion Loss for Classifying Skeletal Muscle Recovery Stages</h3>
+            <p class="authors">Yu Yamaoka, <strong>Weng Ian Chan</strong>, Shigeto Seno, Soichiro Fukada, Hideo Matsuda</p>
+            <p class="description">A label-proportion-based learning approach for classifying skeletal muscle recovery stages, combining weak supervision with medical imaging analysis.</p>
+            <div class="link-row"><a class="project-link" href="https://arxiv.org/abs/2505.04150" target="_blank" rel="noopener">Paper</a></div>
           </div>
-          <div class="item-authors">
-            <strong>Weng Ian Chan</strong>, Hiroaki Santo, Fumio Okura, Yasuyuki Matsushita
-          </div>
-          <div class="item-venue">
-            Meeting on Image Recognition and Understanding (MIRU), 2021.
-          </div>
-          <div class="item-meta">
-            Attribute-driven face synthesis with multi-resolution conditional classifiers for StyleGAN.
-          </div>
-        </div>
+        </article>
 
-        <div class="item">
-          <div class="item-title">
-            Quantum Learning from Label Proportion
+        <article class="project-card">
+          <div class="project-media"><img src="img/thumbnail_2023miru.jpg" alt="Thumbnail for fine-grained facial image manipulation project" /></div>
+          <div>
+            <p class="project-venue">MIRU 2023 · Interactive Presentation Award</p>
+            <h3>Fine-grained Facial Image Manipulation via Latent Space Decomposition</h3>
+            <p class="authors"><strong>Weng Ian Chan</strong>, Xu Cao, Hiroaki Santo, Fumio Okura</p>
+            <p class="description">A latent-space decomposition approach for fine-grained facial image manipulation, enabling more detailed control of facial attributes and expressions.</p>
           </div>
-          <div class="item-authors">
-            Yu Yamaoka, <strong> Weng Ian Chan</strong>, Kosuke Mitarai
-          </div>
-          <div class="item-venue">
-            Quantum Information Processing (QIP), 2026. Poster.
-          </div>
-          <div class="item-meta">
-            A quantum formulation of learning from label proportions that leverages probabilistic qubit
-            measurements for weak supervision.
-          </div>
-        </div>
+        </article>
 
-        <p class="full-list-note">
-          For a full list of publications, please see my
-          <a href="https://scholar.google.com/citations?user=TcdTtjIAAAAJ" target="_blank" rel="noopener">
-            Google Scholar
-          </a>
-          or
-          <a href="cv.pdf" target="_blank" rel="noopener">CV</a>.
-        </p>-->
-      </section>
+        <article class="project-card">
+          <div class="project-media"><img src="img/thumbnail_2021miru.jpg" alt="Thumbnail for conditional StyleGAN face synthesis project" /></div>
+          <div>
+            <p class="project-venue">MIRU 2021</p>
+            <h3>Conditional StyleGAN with Multi-resolution Classifiers for Attribute-driven Face Synthesis</h3>
+            <p class="authors"><strong>Weng Ian Chan</strong>, Hiroaki Santo, Fumio Okura, Yasuyuki Matsushita</p>
+            <p class="description">A StyleGAN-based face synthesis project using multi-resolution classifiers for attribute-driven generation and control.</p>
+          </div>
+        </article>
+      </div>
+      <p class="project-publication-note">For a complete record, see the <a href="publication.html">full publication list</a>.</p>
+    </section>
 
-      <!-- Experience -->
-      <section id="experience">
-        <h2 class="section-title">Experience</h2>
-      
+    <section id="contact">
+      <p class="section-kicker">Contact</p>
+      <h2 class="section-title">Get in touch</h2>
+      <div class="contact-grid">
         <div class="card">
-          <div class="card-title">Research Experience</div>
-          <div class="card-body">
-            <ul class="list-compact">
-      
-              <li>
-                <strong>Research Assistant – The University of Osaka</strong><br />
-                <span class="card-meta">Apr 2023 – present</span><br />
-                <!--<span class="card-meta">
-                  Independent research on computer vision and Generative AI, including diffusion
-                  models and GANs. Developed PyTorch/Docker pipelines and adapted open-source
-                  implementations for experimentation and validation.
-                </span>-->
-              </li>
-
-              <li>
-                <strong>Visiting Scholar – University of California, Merced (Prof. Ming-Hsuan Yang’s Lab)</strong><br />
-                <span class="card-meta">Nov 2024 – Mar 2025</span><br />
-                <!--<span class="card-meta">
-                  Conducted research in generative modeling under the supervision of Prof. Ming-Hsuan Yang.
-                </span>-->
-              </li>
-
-
-              <li>
-                <strong>Research Intern – CyberAgent, Inc.</strong><br />
-                <span class="card-meta">Jul 2024 – Nov 2024</span><br />
-                <!--<span class="card-meta">
-                  Conducted research on human image and video generation using cutting-edge
-                  computer graphics and image synthesis techniques.
-                </span>-->
-              </li>
-      
-              <li>
-                <strong>Research Intern – rinna Co., Ltd.</strong><br />
-                <span class="card-meta">Aug 2021 – Sep 2021</span><br />
-                <!--<span class="card-meta">
-                  Worked on text- and audio-based talking-head synthesis. Surveyed and evaluated
-                  prior work and explored lip-synced video generation from audio inputs.
-                </span>-->
-              </li>
-      
-            </ul>
-          </div>
+          <h3>Email</h3>
+          <p>chan.wengian{at}ist.osaka-u.ac.jp<br />(replace {at} with @)</p>
         </div>
-      
-      </section>
-
-
-      <!-- Awards & Scholarships -->
-      <section id="awards">
-        <h2 class="section-title">Awards & Scholarships</h2>
-        <div class="two-col">
-          <div>
-            <div class="card">
-              <div class="card-title">Awards</div>
-              <ul class="list-compact">
-                 <li>
-                  <strong>Audience Award</strong>, MIRU 2025<br />
-                  <span class="card-meta">
-                    FreeEyeglass: Training-free and Mask-free Eyeglass Transfer for Facial Videos 
-                    <!--<strong>Weng Ian Chan</strong>, Yuantian Huang, Xingchao Yang, Fumio Okura, Takafumi Taketomi-->
-                  </span>
-                </li>
-                <li>
-                  <strong>Student Encouragement Award</strong>, MIRU 2025<br />
-                </li>
-                <li>
-                  <strong>Audience Award</strong>, MIRU 2024<br />
-                  <span class="card-meta">
-                    Instance-wise Distribution Control of Text-to-image Diffusion Models
-                  </span>
-                </li>
-                 <li>
-                  <strong>Interactive Presentation Award</strong>, MIRU 2023<br />
-                  <span class="card-meta">
-                    Fine-grained Facial Image Manipulation via Latent Space Decomposition.
-                  </span>
-                </li>
-                <li>
-                  <strong>Excellent Research Award for Female Graduate Students</strong><br />
-                  <span class="card-meta">The University of Osaka, 2023</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <div class="card">
-              <div class="card-title">Scholarships & Fellowships</div>
-              <ul class="list-compact">
-                <li>
-                  <strong>The University of Osaka Fellowship for Information and AI Technologies</strong><br />
-                  <span class="card-meta">2023 – 2025</span>
-                </li>
-                <li>
-                  <strong>Japanese Government (MEXT) Scholarship – Research Student</strong><br />
-                  <span class="card-meta">2021 – 2023</span>
-                </li>
-                <li>
-                  <strong>Japanese Government (MEXT) Scholarship – Undergraduate Student</strong><br />
-                  <span class="card-meta">2016 – 2021</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+        <div class="card">
+          <h3>Affiliation</h3>
+          <p>Computer Vision Laboratory<br />Graduate School of Information Science and Technology<br />The University of Osaka<br />1-5 Yamadaoka, Suita, Osaka 565-0871, Japan</p>
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
 
-      <!-- Contact -->
-      <section id="contact">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-grid">
-          <div class="card">
-            <div class="card-title">Email</div>
-            <div class="contact-value">
-              chan.wengian{at}ist.osaka-u.ac.jp<br />
-              (replace {at} with @)
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-title">Mailing address</div>
-            <div class="contact-value">
-              Computer Vision Laboratory<br />
-              Graduate School of Information Science and Technology<br />
-              The University of Osaka<br />
-              1-5 Yamadaoka, Suita, Osaka 565-0871, Japan
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+  <footer>
+    <div class="container footer-inner">
+      <span>&copy; <span id="year"></span> Weng Ian (Ianna) Chan.</span>
+      <span>Last updated 2026.</span>
+    </div>
+  </footer>
 
-    <footer>
-      &copy; <span id="year"></span> Weng Ian (Ianna) Chan. All rights reserved.
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
